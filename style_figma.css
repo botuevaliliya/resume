@@ -13,9 +13,7 @@ body {
 }
 
 .container {
-  height: 100vh;
   overflow-y: scroll;
-  /* scroll-snap-type: y mandatory; */
 }
 
 .header {
@@ -43,11 +41,7 @@ a:hover {
 }
 
 .page {
-  height: 100vh;
   width: 100%;
-  /* scroll-snap-align: start; */
-  /* background-color: aliceblue; */
-  border: #a8a7a71a 1px solid;
 }
 
 .followthewhiterabbit {
@@ -85,19 +79,15 @@ a:hover {
 .title {
   margin-top: 10%;
   margin-left: 10%;
-  /* background-color: blue; */
   font-family: "Roboto";
 }
 
 .content {
-  /* background-color: blueviolet; */
   margin-top: 5%;
   margin-left: 10%;
   margin-right: 10%;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  /* border: #ff0000 2px solid; */
 }
 
 .about-box {
@@ -112,7 +102,6 @@ a:hover {
 
 .about-text {
   margin-top: 30px;
-  /* background-color: yellowgreen; */
   width: 70%;
   word-wrap: break-word;
   text-align: justify;
@@ -120,7 +109,6 @@ a:hover {
 
 .myphoto {
   width: 50%;
-  /* background-color: burlywood; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,18 +129,40 @@ a:hover {
 .companies {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
-  gap: 20px;
+  /* gap: 20px; */
+  /* background-color: blue; */
 }
 
 .jobcard {
   height: 340px;
   width: 220px;
-  /* border: 1px solid rgb(210, 210, 210); */
   border-radius: 10px;
-  flex: 1 1 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jobcard-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.jobcard-front, .jobcard-end {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.jobcard:hover .jobcard-inner {
+  transform: rotateY(180deg);
+}
+
+.jobcard-end {
+  transform: rotateY(180deg);
 }
 
 .company-image img {
@@ -229,4 +239,139 @@ a:hover {
 .myphotokid {
     margin-bottom: 20px;
     margin-left: 20px;
+}
+
+
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 14px; 
+  }
+
+  .about-position {
+    font-size: 12px;
+  }
+
+  .about-text {
+    font-size: 10px; /* Smaller text for readability */
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .about-text {
+    width: 100%;
+  }
+
+  .myphoto {
+    width: 100%;
+  }
+
+  .myphoto img {
+    width: 150px;
+  }
+
+  .timeframe {
+    display: none;
+  }
+
+  .jobcard {
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+
+  .uniflag img {
+    height: auto; 
+  }
+
+  .unifaculty {
+    font-size: 12px;
+  }
+
+  .faculty-text {
+    font-size: 10px;
+  }
+
+  .interest-text {
+    font-size: 10px; 
+  }
+
+  .myphotokid img {
+    width: 100%;
+  }
+
+  .faculty-text {
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: 820px) {
+
+  .title {
+    font-size: 14px; 
+  }
+
+  .about-position {
+    font-size: 12px;
+  }
+
+  .about-text {
+    font-size: 10px; 
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .about-text {
+    width: 100%;
+  }
+
+  .myphoto {
+    width: 100%;
+  }
+
+  .myphoto img {
+    width: 150px;
+  }
+
+  .timeframe {
+    display: none;
+  }
+
+  .uniflag img {
+    height: auto; 
+  }
+
+  .unifaculty {
+    font-size: 12px;
+  }
+
+  .faculty-text {
+    font-size: 10px;
+  }
+
+  .interest-text {
+    font-size: 10px; 
+  }
+
+  .myphotokid img {
+    width: 100%;
+  }
+
+  .faculty-text {
+    margin-bottom: 10px;
+  }
 }
