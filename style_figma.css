@@ -66,6 +66,10 @@ a:hover {
   z-index: 1;
 }
 
+video {
+  pointer-events: none;
+}
+
 .intro-img {
   position: absolute;
   top: 0px;
